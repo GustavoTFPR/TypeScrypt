@@ -30,9 +30,9 @@ DELETE http://localhost:3000/api/pedidos/7
 
 ###
 // atualizar status
-PATCH  http://localhost:3000/api/pedidos/7
+PATCH  http://localhost:3000/api/pedidos/9
 Content-Type: application/json
 
 {
-    "status": "finalizado"
+    "status": "pendente"
 }
