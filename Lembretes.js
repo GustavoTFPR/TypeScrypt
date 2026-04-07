@@ -74,6 +74,14 @@ Content-Type: application/json
     // Colocar em comentário a parte de idade e area para testar a mensagem de erro, não esquecer de tirar a virgula do nome também.
 }
 
+Typescript:
+
+Estrutura Básica de um Programa Typescript:
+function main(): void {
+    console.log("Hello World");
+}
+    Postgress: do senai usar extensao postgress e fazer a conexao com o banco de dados da seguinte forma:
+    username:postgress, password:alunos ou aluno, database: cafe ou o nome do banco de dados.
 
 Python:
 

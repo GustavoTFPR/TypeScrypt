@@ -149,7 +149,7 @@ export const PedidoModel = {
           [item.quantidade, item.produto_id]
         );
       }
-      await client.query("DELETE itens_pedido WHERE pedido_id = $1", [id]);
+      await client.query("DELETE FROM itens_pedido WHERE pedido_id = $1", [id]);
       for (const item of novosItens) {
         const { rows: produto } = await client.query(
           "SELECT estoque, nome, preco FROM produtos WHERE  id = $1",
@@ -169,7 +169,7 @@ export const PedidoModel = {
           [item.quantidade, item.produto_id]
         );
         await client.query(
-          "INSERT INTO itens_pedido(pedido_id, produto_id, quantidade, preco_un) VALUES ($1,$2,$3,$4)",
+          "INSERT INTO itens_pedido (pedido_id, produto_id, quantidade, preco_un) VALUES ($1,$2,$3,$4)",
           [id, item.produto_id, item.quantidade, produtoSelecionado.preco]
         );
       }

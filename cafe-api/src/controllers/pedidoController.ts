@@ -51,6 +51,25 @@ export const deletePedido = async (req: Request, res: Response) => {
   }
 };
 
+export const putPedido = async (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+  const itens: INovoItemPedido[] = req.body.itens;
+  if (!itens || !Array.isArray(itens)) {
+    res.status(400).json({ error: "Formato de itens inválido" });
+  }
+  try {
+    await PedidoModel.atualizar(id, itens);
+    res.json({ message: "Pedido atualizado com sucesso!" });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return res.status(400).json({ error: error.message });
+    }
+    return res
+      .status(500)
+      .json({ error: "Ocorreu um erro inesperado ao atualizar o pedido." });
+  }
+};
+
 export const patchStatus = async (req: Request, res: Response) => {
   const id = Number(req.params.id);
   const { status } = req.body;
