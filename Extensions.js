@@ -1,0 +1,16 @@
+/*
+Postgress SQL
+Rest Client
+indent rainbow
+javaScript Debugger
+Java Script essentials
+Output Colorizer
+ESLint
+Prettier Code formatter
+
+
+
+
+
+
+*/
