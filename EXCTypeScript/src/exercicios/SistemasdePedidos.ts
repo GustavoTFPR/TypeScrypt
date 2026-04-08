@@ -7,13 +7,13 @@ Crie uma função que receba esse Enum como parâmetro e retorne uma mensagem pe
 
 
 enum Status {
-    Pendente = "Pendente",
-    Enviado = "Enviado",
-    Entregue = "Entregue"
+        Pendente = "Pendente",
+        Enviado = "Enviado",
+        Entregue = "Entregue"
 }
 
 function mensagemStatus(status: Status): string {
-    switch (status) {
+        switch (status) {
 case Status.Pendente:
         return "Seu pedido está pendente e será processado em breve.";
 case Status.Enviado:
@@ -22,9 +22,8 @@ case Status.Entregue:
         return "Seu pedido foi entregue com sucesso.";
 default:
         return "Status desconhecido.";
-    }
 }
-
-  console.log(mensagemStatus(Status.Pendente));  // "Seu pedido está pendente e será processado em breve."
-  console.log(mensagemStatus(Status.Enviado));   // "Seu pedido já saiu para entrega!"
-  console.log(mensagemStatus(Status.Entregue));  // "Seu pedido foi entregue com sucesso."
+}
+console.log(mensagemStatus(Status.Pendente));  
+console.log(mensagemStatus(Status.Enviado));   
+console.log(mensagemStatus(Status.Entregue));
