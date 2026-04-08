@@ -54,6 +54,7 @@ só vai ser usada durante o desenvolvimento e não vai ser instalada em produç�
 npm uninstall express @types/express
 npm i -D nodemon (pacote para rodar o servidor automaticamente quando houver mudanças no código)
 npm i pg
+npm install -D typescript txg (para instalar o typescript, ts-node-dev e as tipagens do express, pg e node)
 npm i(install) express pg (para instalar ambos os pacotes de uma vez)
 npm install -D typescript ts-node-dev @types/express @typs/pg @types/node (para instalar o typescript, ts-node-dev e as tipagens do express, pg e node)
 npx tsc --init ou apena um - (para inicializar o typescript, vai criar um arquivo tsconfig.json com as configurações do typescript)
