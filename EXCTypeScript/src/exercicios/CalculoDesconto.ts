@@ -1,4 +1,4 @@
-const calculoDesconto = (valor: number, categoria: string): number => {
+export const calculoDesconto = (valor: number, categoria: string): number => {
     if (categoria === "Eletrônicos") {
         return valor * 0.9; // 10% de desconto
     }
@@ -7,6 +7,3 @@ const calculoDesconto = (valor: number, categoria: string): number => {
     }
     return -1; // Categoria inválida
 }
-
-console.log(calculoDesconto(3000, "Eletrônicos")); // Saída: 2700
-console.log(calculoDesconto(150, "Vestuário")); // Saída: 142.5

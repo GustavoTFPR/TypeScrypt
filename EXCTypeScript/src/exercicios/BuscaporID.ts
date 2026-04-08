@@ -7,26 +7,11 @@ A função deve retornar o objeto encontrado ou undefined.
 */
 
 
-interface Identificavel {
+export interface Identificavel {
     id: number;
-}
-
-
-function buscarPorId<T extends Identificavel>(lista: T[], id: number): T | undefined {
-    return lista.find(item => item.id === id);
-}
-
-
-interface User extends Identificavel {
-    nome: string;
-    email: string;
-}
-
-const usuarios: User[] = [
-    { id: 1, nome: "Ana", email: "ana@email.com" },
-    { id: 2, nome: "Carlos", email: "carlos@email.com" },
-    { id: 3, nome: "Beatriz", email: "beatriz@email.com" }
-];
-
-const usuarioEncontrado = buscarPorId(usuarios, 2);
-console.log(usuarioEncontrado);
+  }
+  
+  export function buscarPorId<T extends Identificavel>(array: T[], id: number): T | undefined {
+    return array.find(item => item.id === id);
+  }
+  
