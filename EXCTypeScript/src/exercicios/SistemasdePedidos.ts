@@ -6,13 +6,13 @@ Crie uma função que receba esse Enum como parâmetro e retorne uma mensagem pe
 */
 
 
-enum Status {
+export enum Status {
         Pendente = "Pendente",
         Enviado = "Enviado",
         Entregue = "Entregue"
 }
 
-function mensagemStatus(status: Status): string {
+export function mensagemStatus(status: Status): string {
         switch (status) {
 case Status.Pendente:
         return "Seu pedido está pendente e será processado em breve.";
