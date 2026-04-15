@@ -1,3 +1,4 @@
+import { get } from "node:http";
 import { pool } from "../db.js";
 
 export interface IItemPedido {
@@ -188,4 +189,16 @@ export const PedidoModel = {
     const result = await pool.query(query, [novoStatus, id]);
     return (result.rowCount ?? 0) > 0;
   },
+
+async getFaturamentoTotal(): Promise<{ faturamento_total: number }> {
+  const query = `
+    SELECT COALESCE(SUM(ip.quantidade * ip.preco_un), 0) AS faturamento_total
+    FROM pedidos p
+    JOIN itens_pedido ip ON p.id = ip.pedido_id
+    WHERE p.status = 'finalizado'
+  `;
+  const { rows } = await pool.query<{ faturamento_total: number }>(query);
+  return { faturamento_total: parseFloat(rows[0].faturamento_total) };
+},
+
 };
